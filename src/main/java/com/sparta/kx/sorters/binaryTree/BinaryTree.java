@@ -6,13 +6,13 @@ public interface BinaryTree {
     int getRootElement();
 
 
-    int getNumberOfElements(Node rootNode);
+    int getNumberOfElements();
 
     void addElementToTree(int element);
 
     void addElements(final int[] elements);
 
-    boolean findElement(int value);
+    boolean findElement(int element);
 
     int getLeftChild(int element) throws ChildNotFoundException;
 

@@ -1,29 +1,14 @@
 package com.sparta.kx.sorters;
 
-import java.util.Arrays;
-import java.util.Random;
-
-public class BubbleSorter {
-    public static void main( String[] args ) {
-        int requiredLength = 20;
-        int[] numbers = getRandomArray(requiredLength);
-        System.out.println("Before sort:" + Arrays.toString(numbers));
-        System.out.println("After sort: " + Arrays.toString(sortArray(numbers)));
-    }
+public class BubbleSorter implements Sorter{
 
     //static int[] getRandomArray(int requiredLength) {
-    static int[] getRandomArray(int requiredLength) {
-        Random rand = new Random();
-
-        int[] randomArray = new int[requiredLength];
-        for (int i = 0; i < requiredLength; i++) {
-            randomArray[i] = rand.nextInt(100);
-            //System.out.println(randomArray[i]);
-        }
-        return randomArray;
+    public int[] sortArray(int[] arrayToSearch) {
+        bubbleSortAlg(arrayToSearch);
+        return arrayToSearch;
     }
 
-    static int[] sortArray(int [] arrayToSearch) {
+    private static void bubbleSortAlg(int[] arrayToSearch) {
         int count = arrayToSearch.length;
         for(int i = 0; i < count -1; i++) {
             for (int j = 0; j < count - 1; j ++) {
@@ -32,7 +17,6 @@ public class BubbleSorter {
                 }
             }
         }
-        return arrayToSearch;
     }
 
     public static void swapTriangle(int[] arrayToSearch, int j) {
