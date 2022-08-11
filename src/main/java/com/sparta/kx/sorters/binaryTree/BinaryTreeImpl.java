@@ -11,8 +11,61 @@ public class BinaryTreeImpl implements BinaryTree{
     private final Node rootNode;
     private int index;
 
+    private class Node {
+
+        private final int value;
+        private Node leftChild;
+        private Node rightChild;
+
+        private Node(int value) {
+            this.value = value;
+        }
+
+        private void createLeftNode(int value) {
+            leftChild = new Node(value);
+        }
+
+        private void createRightNode(int value) {
+            rightChild = new Node(value);
+        }
+
+        private int getValue() {
+            return value;
+        }
+
+        private Node getLeftChild() {
+            return leftChild;
+        }
+
+        private void setLeftChild(Node leftChild) {
+            this.leftChild = leftChild;
+        }
+
+        private Node getRightChild() {
+            return rightChild;
+        }
+
+        private void setRightChild(Node rightChild) {
+            this.rightChild = rightChild;
+        }
+
+        private boolean isLeftChildEmpty() {
+            return leftChild == null;
+        }
+
+        private boolean isRightChildEmpty() {
+            return rightChild == null;
+        }
+    }
+
     public BinaryTreeImpl(int elements) {
         rootNode = new Node(elements);
+    }
+    public BinaryTreeImpl(final int[] array) {
+        rootNode = new Node(array[0]);
+        for (int i = 1; i < array.length; i++) {
+            addElementToTree(array[i]);
+        }
     }
 
     @Override

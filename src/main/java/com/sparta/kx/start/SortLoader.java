@@ -1,52 +1,36 @@
 package com.sparta.kx.start;
 
-import com.sparta.kx.sorters.BubbleSorter;
-import com.sparta.kx.sorters.MergeSorter;
-import com.sparta.kx.sorters.QuickSorter;
-import com.sparta.kx.sorters.RandomArrayGenerator;
+import com.sparta.kx.display.DisplayManager;
+import com.sparta.kx.exceptions.SorterLoaderException;
+import com.sparta.kx.sorters.*;
 import com.sparta.kx.sorters.binaryTree.BinaryTreeImpl;
 
 import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 public class SortLoader {
-    public static void getArrays() {
-        MergeSorter mergeSorter = new MergeSorter();
-        QuickSorter quickSorter = new QuickSorter();
+    private final static Scanner scanner = new Scanner(System.in);
+    public static void start() {
+        try {
+            DisplayManager.displaySortChoice();
+            int choice = scanner.nextInt();
+            Sorter sorter = SortFactory.getSorter(choice);
+            System.out.println("Please enter the size of array you want to generate: ");
+            int[] arrayToSort = createArray(scanner.nextInt());
+            DisplayManager.printBeforeSort(sorter, arrayToSort);
+            DisplayManager.printResults(sorter, arrayToSort);
+        } catch (SorterLoaderException e) {
+            start();
+        }
+    }
 
-
-        int[] arr1 = {4, 67, 2, 76, 1};
-        int[] arr2 = {64, 223, 123, 54, 43, 7};
-
-        //QuickSort
-        //System.out.println(Arrays.toString(quickSorter.sortArray(arr1)));
-
-        //MergeSort
-        //System.out.println(Arrays.toString(mergeSorter.sortArray(arr2)));
-
-
-        BubbleSorter bubbleSorter = new BubbleSorter();
-        BinaryTreeImpl binaryTree = new BinaryTreeImpl(6);
-        binaryTree.addElementToTree(3);
-        binaryTree.addElementToTree(8);
-        binaryTree.addElementToTree(4);
-        binaryTree.addElementToTree(1);
-        binaryTree.addElementToTree(16);
-
-        int[] arrayToAdd = {34, 21, 23, 6, 43, 12, 9};
-        binaryTree.addElements(arrayToAdd);
-
-        System.out.println();
-        System.out.println("Binary tree sort ascending: " + Arrays.toString(binaryTree.getSortedTreeAsc()));
-        System.out.println("Binary tree sort descending: " + Arrays.toString(binaryTree.getSortedTreeDesc()));
-
-        //System.out.println(binaryTree.getNumberOfElements());
-
-        //System.out.println(Arrays.toString(binaryTree.getSortedTreeAsc()));
-
-
-        int requiredLength = 20;
-        int[] numbers = RandomArrayGenerator.getRandomArray(requiredLength);
-        //System.out.println("Before sort:" + Arrays.toString(numbers));
-        //System.out.println("After sort:" +Arrays.toString(bubbleSorter.sortArray()));
+    public static int[] createArray(int requiredLength) {
+        Random rand = new Random();
+        int[] randomArray = new int[requiredLength];
+        for (int i = 0; i < requiredLength; i++) {
+            randomArray[i] = rand.nextInt(100);
+        }
+        return randomArray;
     }
 }

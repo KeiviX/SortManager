@@ -25,4 +25,9 @@ public class BubbleSorter implements Sorter{
         arrayToSearch[j] = arrayToSearch[j+1];
         arrayToSearch[j+1] = temp;
     }
+
+    @Override
+    public String toString() {
+        return "BubbleSorter";
+    }
 }

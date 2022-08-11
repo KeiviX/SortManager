@@ -2,6 +2,10 @@ package com.sparta.kx.sorters;
 
 
 public class MergeSorter implements Sorter {
+    @Override
+    public String toString() {
+        return "MergeSorter";
+    }
 
     @Override
     public int[] sortArray(int[] arrays) {
