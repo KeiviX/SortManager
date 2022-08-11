@@ -36,4 +36,8 @@ public class Node {
     public boolean isRightChildEmpty() {
         return rightChild == null;
     }
+
+    public boolean hasChildren() {
+        return leftChild != null || rightChild != null;
+    }
 }

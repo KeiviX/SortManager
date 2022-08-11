@@ -9,7 +9,6 @@ import com.sparta.kx.exceptions.ChildNotFoundException;
 
 public class BinaryTreeImpl implements BinaryTree{
     private final Node rootNode;
-    private int[] arrayToSort;
     private int index;
 
     public BinaryTreeImpl(int elements) {
@@ -34,15 +33,15 @@ public class BinaryTreeImpl implements BinaryTree{
         }
     }
 
-
-
     public void addElementToTree(int element) {
         addNodeToTree(rootNode, element);
     }
 
     @Override
     public void addElements(int[] elements) {
-
+        for (int i : elements) {
+            addElementToTree(i);
+        }
     }
 
     @Override
@@ -53,47 +52,54 @@ public class BinaryTreeImpl implements BinaryTree{
 
     @Override
     public int getLeftChild(int element) throws ChildNotFoundException {
-        Node leftNode = findNode(element).getLeftChild();
-        return leftNode.getValue();
+        Node leftNode = findNode(element);
+        assert leftNode != null;
+        return leftNode.getLeftChild().getValue();
     }
 
     @Override
     public int getRightChild(int element) throws ChildNotFoundException {
         Node rightNode = findNode(element);
+        assert rightNode != null;
         return rightNode.getRightChild().getValue();
     }
 
-
-    /*
-    @Override
-    public int[] getSortedTreeAsc(int size) {
-        int[] sortedArrayInAsc = new int[size];
-            return returnAscendingTree(sortedArrayInAsc, rootNode);
-        }
-
-    private int[] returnAscendingTree(int[] tempArray, Node rootNode) {
-        if (!rootNode.isLeftChildEmpty()) {
-            returnAscendingTree(tempArray, rootNode);
-        } else {
-            tempArray[index] =rootNode.getValue();
-            index++;
-            if (!rootNode.isRightChildEmpty()) {
-                returnAscendingTree(tempArray, rootNode.getRightChild());
-            }
-        }
-        return tempArray;
-    }
-
-     */
     @Override
     public int[] getSortedTreeAsc() {
-        sortedTree = new int[numOfNodes()]
+        index = 0;
+        int[] sortedArray = new int[getNumberOfElements()];
+        return returnAscendingTree(sortedArray, rootNode);
+    }
+
+    private int[] returnAscendingTree(int[] sortedArray, Node node) {
+        if (!node.isLeftChildEmpty()) {
+            returnAscendingTree(sortedArray, node.getLeftChild());
+        }
+        sortedArray[index++] = node.getValue();
+        if (!node.isRightChildEmpty()) {
+            returnAscendingTree(sortedArray, node.getRightChild());
+        }
+        return sortedArray;
     }
 
     @Override
     public int[] getSortedTreeDesc() {
-        return new int[0];
+        int[] sortedArray = new int[getNumberOfElements()];
+        index = 0;
+        return returnDescendingTree(sortedArray, rootNode);
     }
+
+    private int[] returnDescendingTree(int[] sortedArray, Node node) {
+        if (!node.isRightChildEmpty()) {
+            returnDescendingTree(sortedArray, node.getRightChild());
+        }
+        sortedArray[index ++] = node.getValue();
+        if (!node.isLeftChildEmpty()) {
+            returnDescendingTree(sortedArray, node.getLeftChild());
+        }
+        return sortedArray;
+    }
+
 
     private void addNodeToTree(Node node, int element) {
         if (element <= node.getValue()) {

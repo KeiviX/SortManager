@@ -2,6 +2,8 @@ package com.sparta.kx.start;
 
 import com.sparta.kx.exceptions.SorterLoaderException;
 import com.sparta.kx.sorters.*;
+import com.sparta.kx.sorters.binaryTree.BinaryTree;
+import com.sparta.kx.sorters.binaryTree.BinaryTreeImpl;
 
 public class SortFactory {
 
@@ -12,10 +14,8 @@ public class SortFactory {
             case 2:
                 return new BinarySorter();
             case 3:
-                return new InsertionSorter();
-            case 4:
                 return new MergeSorter();
-            case 5:
+            case 4:
                 return new QuickSorter();
             default:
                 throw new SorterLoaderException("Invalid Sorter choice " + choice);
