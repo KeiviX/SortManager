@@ -1,7 +1,6 @@
 package com.sparta.kx.display;
 
 import com.sparta.kx.sorters.Sorter;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DisplayManager {

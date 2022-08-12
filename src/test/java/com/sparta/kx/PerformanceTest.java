@@ -59,5 +59,4 @@ public class PerformanceTest {
         int[] sortedArray = sorter.sortArray(unsortedArray);
         printResults(sorter, sortedArray);
     }
-
 }

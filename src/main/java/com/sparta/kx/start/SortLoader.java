@@ -3,8 +3,6 @@ package com.sparta.kx.start;
 import com.sparta.kx.display.DisplayManager;
 import com.sparta.kx.exceptions.SorterLoaderException;
 import com.sparta.kx.sorters.*;
-
-import java.util.Random;
 import java.util.Scanner;
 
 public class SortLoader {

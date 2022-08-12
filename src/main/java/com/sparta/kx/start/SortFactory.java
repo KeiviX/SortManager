@@ -2,8 +2,6 @@ package com.sparta.kx.start;
 
 import com.sparta.kx.exceptions.SorterLoaderException;
 import com.sparta.kx.sorters.*;
-import com.sparta.kx.sorters.binaryTree.BinaryTree;
-import com.sparta.kx.sorters.binaryTree.BinaryTreeImpl;
 
 public class SortFactory {
 
