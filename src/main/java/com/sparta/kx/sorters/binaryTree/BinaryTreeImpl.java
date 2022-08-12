@@ -11,7 +11,7 @@ public class BinaryTreeImpl implements BinaryTree{
     private final Node rootNode;
     private int index;
 
-    private class Node {
+    private static class Node {
 
         private final int value;
         private Node leftChild;
