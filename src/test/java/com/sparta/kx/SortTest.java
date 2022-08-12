@@ -60,11 +60,19 @@ public class SortTest {
         }
     }
     @Test
-    public void testSingleLengthArray() {
+    public void testArrayOfSizeOne() {
         int[] unsortedArray = {7};
         int[] sortedArray = sorter.sortArray(unsortedArray);
         Assertions.assertEquals(sortedArray.length, unsortedArray.length);
         for (int i = 0; i < sortedArray.length - 1; i++){
+            Assertions.assertTrue(sortedArray[i + 1] >= sortedArray[i]);
+        }
+    }
+    @Test
+    public void testLargeArray() {
+        int[] sortedArray = sorter.sortArray(unsortedArray);
+        Assertions.assertEquals(sortedArray.length, unsortedArray.length);
+        for (int i = 0; i < sortedArray.length - 1; i++) {
             Assertions.assertTrue(sortedArray[i + 1] >= sortedArray[i]);
         }
     }
@@ -76,15 +84,6 @@ public class SortTest {
         Assertions.assertEquals(sortedArray.length, unsortedArray.length);
         for (int i = 0; i < sortedArray.length - 1; i++){
             Assertions.assertEquals(sortedArray[i], sortedArray[i]);
-        }
-    }
-
-    @Test
-    public void testLargeArray() {
-        int[] sortedArray = sorter.sortArray(unsortedArray);
-        Assertions.assertEquals(sortedArray.length, unsortedArray.length);
-        for (int i = 0; i < sortedArray.length - 1; i++){
-            Assertions.assertTrue(sortedArray[i + 1] >= sortedArray[i]);
         }
     }
 }

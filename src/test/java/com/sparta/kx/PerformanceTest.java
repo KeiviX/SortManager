@@ -32,9 +32,7 @@ public class PerformanceTest {
     public void testBinarySorter() {
         Sorter sorter = new BinarySorter();
         System.out.println(sorter.toString() + " sort before\n" + Arrays.toString(unsortedArray));
-        long start = System.nanoTime();
         int[] sortedArray = sorter.sortArray(unsortedArray);
-        long end = System.nanoTime();
         printResults(sorter, sortedArray);
     }
 
@@ -42,9 +40,7 @@ public class PerformanceTest {
     public void testBubbleSorter() {
         Sorter sorter = new BubbleSorter();
         System.out.println("Before the " + sorter.toString() + " sort" + Arrays.toString(unsortedArray));
-        long start = System.nanoTime();
         int[] sortedArray = sorter.sortArray(unsortedArray);
-        long end = System.nanoTime();
         printResults(sorter, sortedArray);
     }
 
@@ -52,19 +48,15 @@ public class PerformanceTest {
     public void testMergeSorter() {
         Sorter sorter = new MergeSorter();
         System.out.println("Before the " + sorter.toString() + " sort" + Arrays.toString(unsortedArray));
-        long start = System.nanoTime();
         int[] sortedArray = sorter.sortArray(unsortedArray);
-        long end = System.nanoTime();
         printResults(sorter, sortedArray);
     }
 
     @Test
     public void testQuickSorter() {
         Sorter sorter = new QuickSorter();
-        System.out.println("Before the " + sorter.toString() + " sort" + Arrays.toString(unsortedArray));
-        long start = System.nanoTime();
+        System.out.println("Before the " + sorter.toString() + " sort" + Arrays.toString(unsortedArray));;
         int[] sortedArray = sorter.sortArray(unsortedArray);
-        long end = System.nanoTime();
         printResults(sorter, sortedArray);
     }
 
