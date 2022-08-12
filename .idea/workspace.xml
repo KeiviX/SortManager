@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28ece8c4-618d-4d11-9319-3dbc8a894c44" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/kx/display/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/kx/display/DisplayManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/kx/sorters/BubbleSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/kx/sorters/BubbleSorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/kx/sorters/MergeSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/kx/sorters/MergeSorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/kx/sorters/QuickSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/kx/sorters/QuickSorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/kx/sorters/binaryTree/BinaryTreeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/kx/sorters/binaryTree/BinaryTreeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/kx/start/SortLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/kx/start/SortLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/kx/PerformanceTest.java" beforeDir="false" />
-    </list>
+    <list default="true" id="28ece8c4-618d-4d11-9319-3dbc8a894c44" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
