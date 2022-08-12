@@ -1,7 +1,12 @@
 package com.sparta.kx.sorters;
 
 
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class MergeSorter implements Sorter {
+    private static final Logger logger = Logger.getLogger("my logger");
     @Override
     public String toString() {
         return "MergeSorter";
@@ -40,12 +45,17 @@ public class MergeSorter implements Sorter {
             else {
                 a[k++] = r[j++];
             }
+            logger.log(Level.INFO, "This iteration of the array is " + Arrays.toString(a));
         }
         while (i < left) {
             a[k++] = l[i++];
+            logger.log(Level.INFO, "This iteration of the array is " + Arrays.toString(a));
+
         }
         while (j < right) {
             a[k++] = r[j++];
+            logger.log(Level.INFO, "This iteration of the array is " + Arrays.toString(a));
+
         }
     }
 }

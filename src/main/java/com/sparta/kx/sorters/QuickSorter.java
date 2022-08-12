@@ -1,6 +1,11 @@
 package com.sparta.kx.sorters;
 
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class QuickSorter implements Sorter{
+    private static final Logger logger = Logger.getLogger("my logger");
     @Override
     public int[] sortArray(int[] arrays) {
         return quickSort(arrays, 0, arrays.length -1);
@@ -11,6 +16,7 @@ public class QuickSorter implements Sorter{
             int partitionIndex = partition(arr, begin, end);
             quickSort(arr, begin, partitionIndex-1);
             quickSort(arr, partitionIndex+1, end);
+            logger.log(Level.INFO, "This iteration of the array is " + Arrays.toString(arr));
         }
         return arr;
     }
@@ -25,8 +31,8 @@ public class QuickSorter implements Sorter{
                 arr[i] = arr[j];
                 arr[j] = swapTemp;
             }
+            logger.log(Level.INFO, "This iteration of the array is " + Arrays.toString(arr));
         }
-
         int swapTemp = arr[i+1];
         arr[i+1] = arr[end];
         arr[end] = swapTemp;

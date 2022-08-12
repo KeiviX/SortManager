@@ -7,9 +7,14 @@ package com.sparta.kx.sorters.binaryTree;
 
 import com.sparta.kx.exceptions.ChildNotFoundException;
 
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class BinaryTreeImpl implements BinaryTree{
     private final Node rootNode;
     private int index;
+    private static final Logger logger = Logger.getLogger("my logger");
 
     private static class Node {
 
@@ -19,14 +24,6 @@ public class BinaryTreeImpl implements BinaryTree{
 
         private Node(int value) {
             this.value = value;
-        }
-
-        private void createLeftNode(int value) {
-            leftChild = new Node(value);
-        }
-
-        private void createRightNode(int value) {
-            rightChild = new Node(value);
         }
 
         private int getValue() {
@@ -81,7 +78,7 @@ public class BinaryTreeImpl implements BinaryTree{
     private int numOfNodes(Node rootNode) {
         if (rootNode == null) {
             return 0;
-        } else {//return root + left side + right side, recursively
+        } else {
             return 1 + numOfNodes(rootNode.getLeftChild()) + numOfNodes(rootNode.getRightChild());
         }
     }
@@ -127,10 +124,12 @@ public class BinaryTreeImpl implements BinaryTree{
     private int[] returnAscendingTree(int[] sortedArray, Node node) {
         if (!node.isLeftChildEmpty()) {
             returnAscendingTree(sortedArray, node.getLeftChild());
+            logger.log(Level.INFO, "The algorithm at this time is " + Arrays.toString(sortedArray));
         }
         sortedArray[index++] = node.getValue();
         if (!node.isRightChildEmpty()) {
             returnAscendingTree(sortedArray, node.getRightChild());
+            logger.log(Level.INFO, "The algorithm at this time is " + Arrays.toString(sortedArray));
         }
         return sortedArray;
     }
@@ -145,10 +144,12 @@ public class BinaryTreeImpl implements BinaryTree{
     private int[] returnDescendingTree(int[] sortedArray, Node node) {
         if (!node.isRightChildEmpty()) {
             returnDescendingTree(sortedArray, node.getRightChild());
+            logger.log(Level.INFO, "The algorithm at this iteration is " + Arrays.toString(sortedArray));
         }
         sortedArray[index ++] = node.getValue();
         if (!node.isLeftChildEmpty()) {
             returnDescendingTree(sortedArray, node.getLeftChild());
+            logger.log(Level.INFO, "The algorithm at this iteration is " + Arrays.toString(sortedArray));
         }
         return sortedArray;
     }

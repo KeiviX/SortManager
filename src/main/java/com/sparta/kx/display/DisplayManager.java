@@ -14,12 +14,12 @@ Enter the number of the sorter you wish to use
 4. QuickSorter""" );
     }
 
-    public static void printBeforeSort(Sorter sorter, int[] arrayToSort) {
+    public static void preSort(Sorter sorter, int[] arrayToSort) {
         System.out.println("Sorted using the " + sorter.toString());
         System.out.println("Before sorting:\n" + Arrays.toString(arrayToSort));
     }
 
-    public static void printResults(Sorter sorter, int[] arrayToSort) {
+    public static void postSort(Sorter sorter, int[] arrayToSort) {
         long start = System.nanoTime();
         int[] sortedArray = sorter.sortArray(arrayToSort);
         System.out.println("After sorting:\n" + Arrays.toString(sortedArray));
