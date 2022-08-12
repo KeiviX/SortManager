@@ -75,7 +75,7 @@
       <module name="SortManager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sparta.kx.*" />
+          <option name="PATTERN" value="com.sparta.kx.SortTester" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,7 +90,7 @@
       <module name="SortManager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sparta.kx.*" />
+          <option name="PATTERN" value="com.sparta.kx.SortTester" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,7 +105,7 @@
       <module name="SortManager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sparta.kx.*" />
+          <option name="PATTERN" value="com.sparta.kx.SortTester" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
